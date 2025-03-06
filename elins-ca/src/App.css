@@ -1,9 +1,41 @@
-.header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	justify-content: space-around;
-	background-color: aquamarine;
-	height: 100px;
+body {
+	height: 100%;
 	margin: 0;
 }
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  }
+
+.maincontent {
+	flex: 1;
+	padding: 20px;
+}
+
+.header {
+	padding: 20px;
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+	background-color: lightslategray;
+	height: 60px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list-item {
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+
+.footer {
+	background-color: lightslategray;
+	color: white;
+	text-align: center;
+	padding: 10px;
+  }
