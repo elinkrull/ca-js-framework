@@ -1,7 +1,8 @@
 
 import './App.css'
-import Header from './Header'
-import Searchbar from './Searchbar'
+import Header from './componentes/Header'
+import Searchbar from './componentes/Searchbar'
+import Footer from './componentes/Footer'
 
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
     <>
 	<Header />
 	<Searchbar />
+	<Footer />
     </>
   )
 }
