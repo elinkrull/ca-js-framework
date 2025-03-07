@@ -1,16 +1,18 @@
 
 import './App.css'
-import Header from './Header'
-import Searchbar from './Searchbar'
+import Header from './componentes/Header'
+import Footer from './componentes/Footer'
+import Homepage from './componentes/Homepage'
 
 
 export default function App() {
 
   return (
-    <>
-	<Header />
-	<Searchbar />
-    </>
+    <div className="app-container">
+		<Header />
+		<Homepage />
+		<Footer />
+    </div>
   )
 }
 
