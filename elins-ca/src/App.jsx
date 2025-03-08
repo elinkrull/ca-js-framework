@@ -1,8 +1,8 @@
 
 import './App.css'
-import Header from './componentes/Header'
-import Footer from './componentes/Footer'
-import Homepage from './componentes/Homepage'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import HomePage from './Homepage'
 
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="app-container">
 		<Header />
-		<Homepage />
+		<HomePage />
 		<Footer />
     </div>
   )
