@@ -4,8 +4,7 @@ export default function Header() {
 		<h1>THIS IS THE HEADER</h1>
 		<nav>
              <ul className="nav-list">
-                    <li className="nav-list-item">Pricing</li>
-                    <li className="nav-list-item">About</li>
+                    <li className="nav-list-item">Products</li>
                     <li className="nav-list-item">Contact</li>
                 </ul>
         </nav>
