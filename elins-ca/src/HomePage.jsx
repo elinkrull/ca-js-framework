@@ -1,34 +1,47 @@
 import Searchbar from "./components/Searchbar"
 import Product from "./components/Product"
+import { urlOnlineShop } from "./components/api";
+import { useEffect, useState } from "react";
 //import image from images
 
 export default function Homepage() {
+	const [data, setData] = useState([]); //store the API response
 
-	//API URL
-const urlOnlineShop = "https://v2.api.noroff.dev/online-shop"
+useEffect(() => {
 
-//API call
-async function getOnlineProducts() {
-    const response = await fetch(urlOnlineShop);
-    const result = await response.json();
-	return result;
-};
+	const fetchData = async () => {
+		try {
+		  const response = await fetch(urlOnlineShop); // Replace with your API URL
+		  const result = await response.json(); // Convert response to JSON
+		  console.log(result); // Log the data to check structure
+		  setData(result); // Save the data in state
+		} catch (error) {
+		  console.error("Error fetching data:", error);
+		}
+	  };
 
-console.log(getOnlineProducts());
+	fetchData();
+}, []);
 
     return (
         <main className="homepage">
 			<Searchbar />
-            <h1>This page should display a list of all products</h1>
 			<div className="products">
 				<Product 
-					title="This is a title"
-					description="This is a description"
-					image="an image here"
-					//image={}
-					reviews="This is reviews"
+					id={data.id}
+					title={data.title}
+					description={data.description}
+					image={data.image}
+					reviews={data.reviews}
+				/>
+					<Product 
+					id={data.id}
+					title={data.title}
+					description={data.description}
+					image={data.image}
+					reviews={data.reviews}
 				/>
 			</div>
         </main>
     )
-}
+};
