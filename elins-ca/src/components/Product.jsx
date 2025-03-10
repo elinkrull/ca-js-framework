@@ -1,4 +1,4 @@
-export default function Product({ image, title, description, review}) {
+export default function Product({ image, title, description, reviews}) {
 
 function onAddToCartButtonClick() {
 	console.log("Button Clicked");
@@ -19,7 +19,7 @@ function onAddToCartButtonClick() {
 					<button className="add-to-cart-button" onClick={onAddToCartButtonClick}>Add to cart</button>
 				</div>
 				<div className="info-container">
-					<p>{review}</p>
+					<p>{reviews}</p>
 				</div>
 			</div>
 	)

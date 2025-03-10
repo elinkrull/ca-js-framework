@@ -2,7 +2,7 @@
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import HomePage from './HomePage'
+import HomePage from './pageComponents/HomePage'
 
 export default function App() {
 

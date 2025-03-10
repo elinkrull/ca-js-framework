@@ -1,5 +1,5 @@
-import Searchbar from "./components/Searchbar"
-import Product from "./components/Product"
+import Searchbar from "../components/Searchbar"
+import Product from "../components/Product"
 import { useEffect, useState } from "react";
 
 //import image from images
@@ -44,7 +44,9 @@ useEffect(() => {
 				image={product.image.url}
 				title={product.title}
 				description={product.description}
-				review={product.review}
+				reviews="Reviews here"
+				price={product.price}
+				discountedPrice={product.discountedPrice}
 				/>
 			))
 		  ) : (
