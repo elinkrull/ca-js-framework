@@ -1,21 +1,25 @@
-export default function Product(props) 
-{
+export default function Product({ image, title, description, review}) {
+
+function onAddToCartButtonClick() {
+	console.log("Button Clicked");
+}
+
 	return (
 			<div className="product-card">
 				<img 
 					className="product-image"
-					src={props.image} 
+					src={image} 
 					alt="product image" 
 				/>
-				<h2>{props.title}</h2>
+				<h2>{title}</h2>
 				<div className="info-container">
-					<p>{props.description}</p>
+					<p>{description}</p>
 				</div>
 				<div className="info-container">
-					<button>View product</button>
+					<button className="add-to-cart-button" onClick={onAddToCartButtonClick}>Add to cart</button>
 				</div>
 				<div className="info-container">
-					<p>{props.reviews}</p>
+					<p>{review}</p>
 				</div>
 			</div>
 	)

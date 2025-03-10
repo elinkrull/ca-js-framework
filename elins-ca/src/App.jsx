@@ -2,8 +2,7 @@
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import HomePage from './Homepage'
-
+import HomePage from './HomePage'
 
 export default function App() {
 
