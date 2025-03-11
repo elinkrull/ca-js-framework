@@ -12,15 +12,15 @@ export default function HomePage() {
 const urlOnlineShop = "https://v2.api.noroff.dev/online-shop"
 
 const [products, setProducts] = useState([]); //store the API response
+const [searchQuery, setSearchQuery] = useState(""); // Store search input
+
 
 useEffect(() => {
-
 	const fetchData = async () => {
 		try {
-		  const response = await fetch(urlOnlineShop); // Replace with your API URL
+		  const response = await fetch(urlOnlineShop);
 		  const result = await response.json(); // Convert response to JSON
-		  console.log(result); // Log the data to check structure
-	
+		  console.log(result); // Log the data
 		     // Check if result contains a 'data' key
 			 if (result && result.data) {
 				setProducts(result.data); // Save the products in state
@@ -35,14 +35,20 @@ useEffect(() => {
 	fetchData();
 }, []);
 
+// Filter products based on the search query
+const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
     return (
         <main className="homepage">
 			<Header />
-			<Searchbar />
+			<Searchbar setSearchQuery={setSearchQuery} /> 
 			<div className="products">
-				{products.length > 0? (
-					products.map((product) => (
-				<Product 
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <Product 
 				key={product.id}
 				image={product.image.url}
 				title={product.title}
@@ -53,7 +59,7 @@ useEffect(() => {
 				/>
 			))
 		  ) : (
-			<p>Loading products...</p>
+			<p>No products found...</p>
 		  )}
 			</div>
 			<Footer />
