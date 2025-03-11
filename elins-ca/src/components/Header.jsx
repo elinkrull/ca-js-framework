@@ -1,13 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
 	return (
 		<header className="header">
-		<h1>SHOP</h1>
-		<nav>
-             <ul className="nav-list">
-                    <li className="nav-list-item">Products</li>
-                    <li className="nav-list-item">Contact</li>
-                </ul>
-        </nav>
+		<Link to="/">SHOP</Link>
+		<nav className="navbar">
+     		<Link to="/" className="nav-link">Home</Link>
+    		<Link to="/contact" className="nav-link">Contact</Link>
+    	</nav>
 		<img src="#" className="cart-icon" alt="Cart Icon" />
 		</header>
 	)

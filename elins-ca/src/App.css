@@ -23,12 +23,14 @@ body {
 	height: 60px;
 }
 
-.nav-list {
-    list-style: none;
-    display: flex;
-}
+.navbar a.active {
+	color: red;
+  }
+  .navbar a {
+	color: black;
+  }
 
-.nav-list-item {
+.nav-link {
     margin-left: 10px;
     font-size: 1.1rem;
 }
@@ -40,7 +42,6 @@ body {
 	padding: 20px;
 	margin-top: 20px;
   }
-
 
 /* //productcard.jsx styling */
 

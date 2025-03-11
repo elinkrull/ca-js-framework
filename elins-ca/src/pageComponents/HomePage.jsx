@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-//import image from images
-
 export default function HomePage() {
 
 //API URL
@@ -13,7 +11,6 @@ const urlOnlineShop = "https://v2.api.noroff.dev/online-shop"
 
 const [products, setProducts] = useState([]); //store the API response
 const [searchQuery, setSearchQuery] = useState(""); // Store search input
-
 
 useEffect(() => {
 	const fetchData = async () => {
@@ -40,11 +37,12 @@ const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-
     return (
         <main className="homepage">
 			<Header />
-			<Searchbar setSearchQuery={setSearchQuery} /> 
+			<Searchbar
+				setSearchQuery={setSearchQuery}
+			/> 
 			<div className="products">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
