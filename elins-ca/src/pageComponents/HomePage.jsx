@@ -1,10 +1,12 @@
 import Searchbar from "../components/Searchbar"
 import Product from "../components/Product"
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 //import image from images
 
-export default function Homepage(data) {
+export default function HomePage() {
 
 //API URL
 const urlOnlineShop = "https://v2.api.noroff.dev/online-shop"
@@ -35,6 +37,7 @@ useEffect(() => {
 
     return (
         <main className="homepage">
+			<Header />
 			<Searchbar />
 			<div className="products">
 				{products.length > 0? (
@@ -53,6 +56,7 @@ useEffect(() => {
 			<p>Loading products...</p>
 		  )}
 			</div>
+			<Footer />
         </main>
     );
 }
