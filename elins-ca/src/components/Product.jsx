@@ -1,25 +1,25 @@
-export default function Product({ image, title, description, reviews}) {
+import { Link } from "react-router-dom";
 
-function onAddToCartButtonClick() {
-	console.log("Button Clicked");
-}
+export default function Product({ id, image, title, description, price}) {
 
 	return (
 			<div className="product-card">
 				<img 
 					className="product-image"
 					src={image} 
-					alt="product image" 
+					alt={title}
 				/>
-				<h2>{title}</h2>
+				<Link to={`/product/${id}`} className="product-title">
+				<h1 >{title}</h1>
+				</Link>
 				<div className="info-container">
 					<p>{description}</p>
 				</div>
 				<div className="info-container">
-					<button className="add-to-cart-button" onClick={onAddToCartButtonClick}>Add to cart</button>
+					<p>Price: ${price}</p>
 				</div>
 				<div className="info-container">
-					<p>{reviews}</p>
+					<button className="view-product-button">View product</button>
 				</div>
 			</div>
 	)
