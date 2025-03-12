@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 export default function ProductPage() {
+
   const { id } = useParams(); // Get the product ID from URL
   const [product, setProduct] = useState(null);
 
@@ -40,7 +41,14 @@ export default function ProductPage() {
 					<p>{product.description}</p>
 				</div>
 				<div className="info-container">
-					<p>Price: ${product.price}</p>
+  				{product.discountedPrice < product.price ? (
+   				<>
+    				<p className="original-price"><s>Price: ${product.price}</s></p>
+					<p className="discounted-price">Discounted Price:${product.discountedPrice}</p>
+    			</>
+  				) : (
+					<p className="regular-price">Price: ${product.price}</p>
+  				)}
 				</div>
 	  			<div className="info-container">
 					<button className="add-to-cart-button">Add to cart</button>
