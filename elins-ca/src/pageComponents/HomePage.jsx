@@ -48,6 +48,7 @@ const filteredProducts = products.filter((product) =>
           filteredProducts.map((product) => (
             <Product 
 				key={product.id}
+				id={product.id}
 				image={product.image.url}
 				title={product.title}
 				description={product.description}
