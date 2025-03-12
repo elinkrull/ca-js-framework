@@ -6,7 +6,7 @@ export default function ContactPage() {
 	return (
 		<main className="contact">
 		<Header />
-		<h1>Contact Form</h1>
+		<h1 className="contact-header">SEND A MESSAGE</h1>
 		<ContactForm />
 		<Footer />
 		</main>
